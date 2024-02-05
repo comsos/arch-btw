@@ -1,5 +1,6 @@
 # arch-btw
 How to install Arch btw
+or just use archinstall who cares amirite?
 
 # List Disks
 lsblk > list all drives
