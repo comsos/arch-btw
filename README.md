@@ -1,7 +1,7 @@
 # arch-btw
 How to install Arch btw
 
-```
+#List Disks
 lsblk > list all drives
     >choose a drive to that arch will be installed then type gdisk /dev/sd[x]
         >x (expert)
@@ -127,4 +127,16 @@ sudo nano /etc/pacman.d/hooks/nvidia.hook
 #Reboot
 umount -R /mnt
 reboot
-```
+
+#install xorg/wayland (xorg)
+sudo pacman -S xorg-server xorg-apps xorg-xinit xorg-xinit xorg-twm xorg-xclock xterm
+	>default
+	>y
+startx
+
+#install plasma
+sudo pacman -S plasma sddm
+	>defaults all the way
+	>y
+sudo systemctl enable sddm.service
+reboot
