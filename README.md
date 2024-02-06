@@ -108,11 +108,13 @@ bootctl install
 ```
 
 # if encountered a warning
+```
 nano /etc/fstab
 	>edit fmask=0137,dmask=0027
  	>umount /boot
 	>mount /boot
  	>bootctl install
+```
 
 # write bootentry
 ```
@@ -120,7 +122,7 @@ nano /boot/loader/entries/arch.conf
 title [anytitle]
 linux /vmlinux-linux
 initrd /initranfs-linux.img
-echo "options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sd[x]3) rw" /boot/loader/entries/arch.conf
+echo "options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sd[x]3) rw" >> /boot/loader/entries/arch.conf
 ```
 # enable dhcpcd
 ```
