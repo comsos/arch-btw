@@ -193,6 +193,8 @@ nmcli r wifi on
 nmcli d wifi list
 nmcli d wifi connect [SSID] password [PASSWORD]
 ```
+# FROM THIS STAGE FORWARD U HAVE TO CHOOSE WHICH server/gui ur gonna use
+
 # install xorg/wayland (xorg)
 ```
 sudo pacman -S xorg-server xorg-apps xorg-xinit xorg-xinit xorg-twm xorg-xclock xterm
@@ -200,6 +202,7 @@ sudo pacman -S xorg-server xorg-apps xorg-xinit xorg-xinit xorg-twm xorg-xclock 
 	>y
 startx
 ```
+# hyperland
 
 # install plasma
 ```
