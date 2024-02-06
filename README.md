@@ -192,7 +192,7 @@ reboot
 nmcli r wifi on
 nmcli d wifi list
 nmcli d wifi connect [SSID] password [PASSWORD]
-
+```
 # install xorg/wayland (xorg)
 ```
 sudo pacman -S xorg-server xorg-apps xorg-xinit xorg-xinit xorg-twm xorg-xclock xterm
