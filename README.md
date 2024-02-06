@@ -36,6 +36,17 @@ mkdir /mnt/home
 mount /dev/sd[x]1 /mnt/boot
 mount /dev/sd[x]4 /mnt/home
 ```
+
+# Connect to wifi (if on wifi)
+```
+iwctl
+device list
+station wlan0 scan
+station wlan0 get-networks
+station wlan0 connect [SSID]
+[input password]
+```
+
 # Install packages
 ```
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
@@ -115,13 +126,18 @@ nano /etc/fstab
 	>mount /boot
  	>bootctl install
 ```
+# very important for bootentry
+```
+check docs kekw
+for intel : sudo pacman -S intel-ucode
+```
 
 # write bootentry
 ```
 nano /boot/loader/entries/arch.conf
 title [anytitle]
-linux /vmlinux-linux
-initrd /initranfs-linux.img
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
 echo "options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sd[x]3) rw" >> /boot/loader/entries/arch.conf
 ```
 # enable dhcpcd
@@ -168,6 +184,12 @@ exit
 umount -R /mnt
 reboot
 ```
+
+# connect to wifi (if on wifi)
+```
+nmcli r wifi on
+nmcli d wifi list
+nmcli d wifi connect [SSID] password [PASSWORD]
 
 # install xorg/wayland (xorg)
 ```
