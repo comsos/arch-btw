@@ -3,12 +3,14 @@ How to install Arch btw
 or just use archinstall who cares amirite?
 
 # List Disks
+```
 lsblk > list all drives
     >choose a drive to that arch will be installed then type gdisk /dev/sd[x]
         >x (expert)
         >z (zap)
         >y
         >y
+```
 
 # Create Partition
 ```
