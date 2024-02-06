@@ -126,7 +126,8 @@ echo "options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sd[x]3) rw" >> /bo
 ```
 # enable dhcpcd
 ```
-sudo pacman chcpcd
+ip link
+sudo pacman -S dhcpcd
 sudo systemctl enable dhcpcd@[iplink].service
 ```
 # install network manager
@@ -153,7 +154,7 @@ sudo nano /etc/pacman.d/hooks/nvidia.hook
 	Operation=Upgrade
 	Operation=Remove
 	Type=Package
-	Targer=nvidia
+	Target=nvidia
 
 	[Action]
 	Depends=mkinitcpio
@@ -163,6 +164,7 @@ sudo nano /etc/pacman.d/hooks/nvidia.hook
 ```
 # Reboot
 ```
+exit
 umount -R /mnt
 reboot
 ```
